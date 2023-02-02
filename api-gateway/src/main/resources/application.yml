@@ -1,0 +1,23 @@
+server:
+  port: 8182
+
+spring:
+  application:
+    name: api-gateway
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: ${EUREKA_URI:http://localhost:8081/eureka}
+  instance:
+    preferIpAddress: true
+
+logging:
+  pattern:
+    console: '%C{1.} [%-5level] %d{HH.mm.ss} - %msg%n'
