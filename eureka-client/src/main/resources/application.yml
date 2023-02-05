@@ -11,6 +11,8 @@ eureka:
       defaultZone: ${EUREKA_URI:http://localhost:8081/eureka}
   instance:
     preferIpAddress: true
+    # unique id for each instance
+    instance-id: '${spring.application.name}: ${random.uuid}'
 
 logging:
   pattern:
